@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="image/icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <title>Unit 2</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+        <a class="navbar-brand" href="index.html"><img src="image/logo.png" alt="logo" class="img-fluid" width="150px" height="50px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  </header>
+
+  <main>
+    <div class="documentBody">
+      <h1>Unit 2</h1>
+      <h3>Classes in C++</h3>
+      <ul>
+        <li>A class is a user-defined data type.</li>
+        <li>It groups data members (variables) and member functions (methods).</li>
+        <li>Acts as a blueprint for creating objects.</li>
+      </ul>
+      <br>
+      <h3>Class Declaration</h3>
+      <ul>
+        <li>Declares a class using the class keyword.</li>
+        <li>Defines structure but doesn't allocate memory until objects are created.</li>
+        <li style="list-style: none;"><strong>Syntax:</strong></li>
+        <li style="list-style: none;"><b>class</b> ClassName {// data members and member functions}</li>
+      </ul>
+      <br>
+      <h3>Declaring Objects</h3>
+      <ul>
+        <li>An object is an instance of a class.</li>
+        <li>Created using the class name.</li>
+        <li style="list-style: none;"><strong>Example:</strong></li>
+        <li style="list-style: none;">ClassName obj1, obj2;</li>
+      </ul>
+      <br>
+      <h3> Defining Member Functions</h3>
+      <ul>
+        <li>Functions that operate on class data.</li>
+        <li>Can be defined inside or outside the class.</li>
+        <li style="list-style: none;"><strong>Outside class syntax:</strong></li>
+        <li style="list-style: none;">void ClassName :: functionName() { // code }</li>
+      </ul>
+      <br>
+      <h3>Inline Member Function</h3>
+      <ul>
+        <li>Defined inside the class.</li>
+        <li>Treated as inline, reducing function call overhead.</li>
+      </ul>
+      <div class="codeScreen">
+        <div class="codes">
+          <div class="card">
+            <div class="card-body code-console">
+              <div class="card-header bg-dark text-white">Example</div>
+              <pre>
+class A {
+  void show() { cout << "Hello";} // Inline
+};
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h3>Array of Objects</h3>
+      <ul>
+        <li>An array that stores multiple objects of a class.</li>
+        <li style="list-style: none;"><strong>Example:</strong></li>
+        <li style="list-style: none;">ClassName obj[<b>5</b>]; // array of 5 objects</li>
+      </ul>
+      <br>
+      <h3>Objects as Function Argument</h3>
+      <ul>
+        <li>You can pass objects by value, by reference, or by pointer to functions.</li>
+        <li style="list-style: none;"><strong>Example:</strong></li>
+        <li style="list-style: none;"><b>void show</b>(Student s); // by value</li>
+        <li style="list-style: none;"><b>void display</b>(Student &s); // by reference</li>
+      </ul>
+      <br>
+      <h3>Static Data Member and Member Function</h3>
+      <ul>
+        <li>Static members are shared by all objects.</li>
+        <li>Belong to the class, not to individual objects.</li>
+        <li style="list-style: none;"><strong>Syntax:</strong></li>
+        <li style="list-style: none;"><b>class A</b> { <b>static int</b> count;</li>
+        <li style="list-style: none;"><b>static void show</b>(); };</li>
+      </ul>
+
+      <div class="buttonBox">
+        <a href="unit1.html"><button>Previous</button></a>
+        <a href=""><button>Next</button></a>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="image/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUTORIAL 1 - C++ Introduction</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+            <a class="navbar-brand" href="index.html"><img src="image/logo.png" alt="logo" class="img-fluid" width="150px" height="50px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+
+    <main>
+        <div class="documentBody">
+            <h1>Introduction to C++</h1><br><br>
+            <h3>Difference between Structured Oriented and Object Oriented Programming.</h3>
+            <p><b>Procedure-Oriented / Structured Programming:</b></p>
+            <ul>
+                <li>Structure Oriented Programming is also known as Procedure Oriented Programming.</li>
+                <li>It is basically a sequence of instructions that need to be done for solving a problem.</li>
+                <li>For doing so, number of function need to be written for completing the task.</li>
+                <li>Function have their sequence and sequence of callings.</li>
+                <li>Each function contains list of instructions inorder to excuting them in proper sequence.</li>
+                <li>Each function had it data and local variables.many important data items are placed as global. so, that they may accessed by all the functions.</li>
+                <li>Global data are more reluctant to change by a function.</li>
+                <li>In large program it is quite difficult to identify global variables. This urgently needs a revision in external data structure.</li>
+            </ul>
+
+            <div class="drowBack">
+                <h3>Drawbacks of Structured Programming:</h3>
+                <ul>
+                    <li>Emphasis on developing Algorithm.</li>
+                    <li>Large program divided into smaller parts known as <u>Function.</u></li>
+                    <li>Function use to share global data.</li>
+                    <li>Data moves openly from one function to another.</li>
+                    <li>It employs top down approach in program design.</li>
+                    <li>Function transform data into different form.</li>
+                </ul>
+            </div>
+            <hr>
+
+            <b><p>Object Oriented Programming</p></b>
+            <ul>
+                <li>Object Oriented Programming treat data as critical element in the program development and donot allow it's free flow.</li>
+                <li>It used to tie data and function together and prevent data from accidental modification from outside function.</li>
+                <li>It allow decomposintion of problem into a entity called an <u>Object.</u></li>
+                <li>Once these entities are defined then data member and member function are difined to work upon.</li>
+                <li>This is  an approach that's provide a way of modularizing by creating memory area for both data menber and member function in the form of template. so as to provide copy of such modules on demand.</li>
+            </ul>
+            <br>
+            <br>
+            <br>
+            
+            <h3>Basic concept of Object Oriented Programming:</h3>
+            <ul>
+                <li style="list-style: none;"><b>Class:</b></li>
+                <li>Class contains data and member function to work on that data.</li>
+                <li>It is a user defined type.</li>
+                <li>Class is a collection of object of similar type.</li>
+                <div class="example">
+                    <pre>
+                        /*for example:*/
+
+                        class human{  /*here, human is the class...*/
+                            private:
+                                char physicalAppereance;
+                                char color;
+                                char behaviour;
+                                int height;
+                                float weight;
+                        };
+                    </pre>
+                </div>                  
+                <br>
+                <li style="list-style: none;"><b>Object:</b></li>
+                <li>Person, Place, Things are entities and these entities has features and characterstics, these entites are called an <u>Object.</u></li>
+                <div class="example">
+                    <pre>
+in the above example, if human is a class then object can be male and female...
+                    </pre>
+                </div>
+                <br>
+                <li style="list-style: none;"><b>Abstraction:</b></li>
+                <li>Abstraction refers to representing essential details or features without including background details or functionality.</li>
+                <div class="example">
+                    <pre>
+may be everybody drives a car or bike or any vehicle.
+have you ever notice, what happens internally when you put 
+the key and turns on the bike? behind turning on, there are several
+mechanism working inside the bike internally which we don't know exactly.
+this doesn't need to  be known. from this example we can relate to Abstraction
+in OOP and we can say that "hiding of data which we really don't need to know and representing
+only essential features which we need is known as <u>Abstraction</u>".
+                    </pre>
+                </div>
+                <br>
+                <li style="list-style: none;"><b>Encaptulation:</b></li>
+                <li>Wrapping up of data and member function into a single unit is known as <u>Encaptulation.</u></li>
+                <br>
+                <li style="list-style: none;"><b>Inheritance:</b></li>
+                <li>Inheritance is the feature where property of one class is acquired by another class.</li>
+                <li>Inheritance helps in implementing the concept of code reusability.</li>
+                <br>
+                <li style="list-style: none;"><b>Polymorphism:</b></li>
+                <li>Polymorphism is a concept where a function response differently on the basis of input.</li>
+                <li>Here input is the parameter, that is used to pass.</li>
+                <li>Polymorphism cames from Greek where "Poly" means "many" and "Morphism" means "shape".</li>
+                <li>Polymorphism helps in performing different task or operation by overloading a function and that function will be called with same name but with different parameters and operations.</li>
+            </ul>
+
+            <div class="syntaxholder">
+    
+                <div class="syntax">
+                    <pre>
+Sum(int a){
+                        
+    ---Code_Block---
+
+
+}
+                    </pre>
+                </div>
+
+                <div class="syntax">
+                    <pre>
+Sum(int a, char b){
+                        
+    ---Code_Block---
+
+
+}
+                    </pre>
+                </div>
+
+                <div class="syntax">
+                    <pre>
+Sum(int a, float b, char c){
+                        
+     ---Code_Block---
+
+
+}
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="card-body code-console">
+                <div class="card-header bg-dark text-white">
+                    Lab 01
+                    Madhukar Dwivedi
+                </div>
+                <pre>
+                    #include &lt;stdio.h&gt;
+                    
+                    int main()
+                    {
+                        int a, b, sum;
+
+                        printf("\nEnter the value of a:\t");
+                        scanf("%d",&a);
+                        
+                        printf("\Enter the value of b:\t");
+                        scanf("%d",&b);
+
+                        sum = a + b;
+                        printf("%d",sum);
+
+                        return 0;
+                    }
+                </pre>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

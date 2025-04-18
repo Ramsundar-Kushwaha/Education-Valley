@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="image/icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <title>Unit 1</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+        <a class="navbar-brand" href="index.html"><img src="image/logo.png" alt="logo" class="img-fluid" width="150px" height="50px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</header>
+
+<main>
+  <div class="documentBody">
+    <h1>UNIT - one</h1>
+    <h2>basic concept of OOP</h2>
+    <ul>
+      <li>Object-Oriented Programming (OOP) is a programming paradigm based on the concept of objects.</li>
+      <li>These objects are instances of classes, which define their properties (attributes) and behaviors (methods).</li>
+      <li>OOP helps in organizing code in a more modular, reusable, and scalable way.</li>
+    </ul>
+    <h2>key concept of OOP:</h2>
+    <h3>1. Class and Object</h3>
+    <ul>
+      <li>A Class is an blueprint for creating objects.</li>
+      <li>An Object is an istance of Class. it is an run time entities.</li>
+    </ul>
+      <div class="codeScreen">
+        <div class="codes">
+          <div class="card">
+            <div class="card-body code-console">
+              <div class="card-header bg-dark text-white">Example</div>
+              <pre>
+#include &lt;iostream&gt;
+  using namespace std;
+                  
+  class Car {
+  public:
+      string brand;
+      string model;
+                  
+      void display() {
+          cout &lt;&lt; "Car: " &lt;&lt; brand &lt;&lt; " " &lt;&lt; model &lt;&lt; endl;
+      }
+  };
+                  
+  int main() {
+      Car car1;
+      car1.brand = "Toyota";
+      car1.model = "Corolla";
+      car1.display();  // Output: Car: Toyota Corolla
+                  
+      return 0;
+  }
+                  
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <h3>2. Encaptulation (Data Hiding)</h3>
+      <ul>
+        <li>Encapsulation protects data by restricting direct access to class members.</li>
+        <li>Private members cannot be accessed directly outside the class.</li>
+      </ul>
+      <div class="codeScreen">
+        <div class="codes">
+          <div class="card">
+            <div class="card-body code-console">
+              <div class="card-header bg-dark text-white">Example</div>
+              <pre>
+#include &lt;iostream&gt;
+  using namespace std;
+                  
+  class BankAccount {
+  private:
+      double balance;
+                  
+  public:
+      BankAccount(double bal) { balance = bal; }
+                  
+      void deposit(double amount) { balance += amount; }
+                  
+      double getBalance() { return balance; }
+  };
+                  
+  int main() {
+      BankAccount account(1000);
+      account.deposit(500);
+      cout &lt;&lt; "Balance: " &lt;&lt; account.getBalance() &lt;&lt; endl;  // Output: Balance: 1500
+      return 0;
+  }
+                  
+              </pre>
+            </div>
+          </div>  
+        </div>
+      </div><br>
+    <h3>3. Inheritance</h3>
+    <ul>
+      <li>Inheritance allows a class to acquire properties and behavior from another class.</li>
+    </ul>
+    <div class="codeScreen">
+      <div class="codes">
+        <div class="card">
+          <div class="card-body code-console">
+            <div class="card-header bg-dark text-white">Example</div>
+            <pre>
+#include &lt;iostream&gt;
+  using namespace std;
+                
+  class Vehicle {
+  public:
+      string brand = "Ford";
+                
+      void honk() { cout &lt;&lt; "Beep Beep!" &lt;&lt; endl; }
+  };
+                
+  class Car : public Vehicle {
+  public:
+      string model = "Mustang";
+  };
+                
+  int main() {
+      Car myCar;
+      cout &lt;&lt; myCar.brand &lt;&lt; " " &lt;&lt; myCar.model &lt;&lt; endl;  // Output: Ford Mustang
+      myCar.honk();  // Output: Beep Beep!
+      return 0;
+  }      
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div><br>
+    <h3>4. Polymorphism</h3>
+    <ul>
+      <li>Polymorphism allows functions to behave differently based on the object type.</li>
+      <li>Achieved through function overriding or function overloading.</li>
+    </ul>
+    <div class="codeScreen">
+      <div class="codes">
+        <div class="card">
+          <div class="card-body code-console">
+            <div class="card-header bg-dark text-white">Function Overriding (Using Virtual Functions)</div>
+            <pre>
+#include &lt;iostream&gt;
+  using namespace std;
+                
+  class Animal {
+  public:
+      virtual void speak() { cout &lt;&lt; "Animal speaks" &lt;&lt; endl; }
+  };
+                
+  class Dog : public Animal {
+  public:
+      void speak() override { cout &lt;&lt; "Woof!" &lt;&lt; endl; }
+  };
+                
+  int main() {
+      Animal* a;
+      Dog d;
+      a = &amp;d;
+        a->speak();  // Output: Woof!
+        return 0;
+    }           
+            </pre>
+        </div>
+      </div><br>
+    </div>
+    <div class="codeScreen">
+      <div class="codes">
+        <div class="card">
+          <div class="card-body code-console">
+            <div class="card-header bg-dark text-white">Function Overloading</div>
+            <pre>
+              #include &lt;iostream&gt;
+                using namespace std;
+                
+                class Math {
+                public:
+                    int add(int a, int b) { return a + b; }
+                    double add(double a, double b) { return a + b; }
+                };
+                
+                int main() {
+                    Math m;
+                    cout &lt;&lt; m.add(2, 3) &lt;&lt; endl;    // Output: 5
+                    cout &lt;&lt; m.add(2.5, 3.5) &lt;&lt; endl; // Output: 6.0
+                    return 0;
+                }
+                
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div><br>
+    <h3>5.Abstraction</h3>
+    <ul>
+      <li>Abstraction hides implementation details and only exposes essential functions.</li>
+      <li>Achieved using pure virtual functions in an abstract base class.</li>
+    </ul>
+    <div class="codeScreen">
+      <div class="codes">
+        <div class="card">
+          <div class="card-body code-console">
+            <div class="card-header bg-dark text-white">Example</div>
+              <pre>
+#include &lt;iostream&lt;
+  using namespace std;
+                  
+  class Shape {
+  public:
+      virtual double area() = 0; // Pure virtual function (makes the class abstract)
+  };
+                  
+  class Circle : public Shape {
+  private:
+      double radius;
+                  
+  public:
+      Circle(double r) { radius = r; }
+                  
+      double area() override { return 3.14 * radius * radius; }
+  };
+                  
+  int main() {
+      Circle c(5);
+      cout &lt;&lt; "Area: " &lt;&lt; c.area() &lt;&lt; endl;  // Output: Area: 78.5
+      return 0;
+  }        
+              </pre>
+          </div>
+        </div>
+      </div>
+    </div><br><hr><br>
+    <h2>Comparison: Procedural Programming vs Object-Oriented Programming</h2><br>
+
+    <table class="table table-hover">
+      <tr class="bg-dark text-white">
+        <th>Features</th>
+        <th>Procedural Programming</th>
+        <th>Object-Oriented Programming</th>
+      </tr>
+      <tr>
+        <th>Definition</th>
+        <td>Based on functions and procedures that operate on data.</td>
+        <td>Based on objects that encapsulate data and behavior.</td>
+      </tr>
+
+      <tr>
+        <th>Structure</th>
+        <td>Follows a top-down approach.</td>
+        <td>Follows a bottom-up approach.</td>
+      </tr>
+
+      <tr>
+        <th>Data Handling</th>
+        <td>Data is global and shared among functions.</td>
+        <td>Data is encapsulated within objects and accessed through methods.</td>
+      </tr>
+
+      <tr>
+        <th>Code Reusability</th>
+        <td>Limited, requires copying code.</td>
+        <td>High, achieved through inheritance and polymorphism.</td>
+      </tr>
+
+      <tr>
+        <th>Security</th>
+        <td>Less secure, as data is often exposed globally.</td>
+        <td>More secure, as data is protected using encapsulation.</td>
+      </tr>
+
+      <tr>
+        <th>Complexity</th>
+        <td>Simple and works well for small programs.</td>
+        <td>Handles complex programs with better organization.</td>
+      </tr>
+
+      <tr>
+        <th>Maintenance</th>
+        <td>Harder to maintain and modify as the codebase grows.</td>
+        <td>Easier to maintain due to modular design.</td>
+      </tr>
+
+      <tr>
+        <th>Example Language</th>
+        <td>C, Pascal, Fortran.</td>
+        <td>c++, Python, Java</td>
+      </tr>
+    </table><br>
+    <div class="codeScreen">
+      <div class="codes">
+        <div class="card">
+          <div class="card-body code-console">
+            <div class="card-header bg-dark text-white">Procedural Approach (C)</div>
+            <pre>
+#include &lt;stdio.h&gt;
+
+  void printDetails(char name[], int age) {
+      printf("Name: %s, Age: %d\n", name, age);
+  }
+                
+  int main() {
+      char name[] = "Alice";
+      int age = 25;
+      printDetails(name, age);
+      return 0;
+  }
+                
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div><br>
+    <div class="codeScreen">
+      <div class="codes">
+        <div class="card">
+          <div class="card-body code-console">
+            <div class="card-header bg-dark text-white">OOP Approach(C++)</div>
+            <pre>
+#include <iostream>
+  using namespace std;
+                
+  class Person {
+  public:
+      string name;
+      int age;
+                
+      void display() {
+          cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; ", Age: " &lt;&lt; age &lt;&lt; endl;
+      }
+  };
+                
+  int main() {
+      Person p;
+      p.name = "Alice";
+      p.age = 25;
+      p.display();
+      return 0;
+  }
+                
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div><br><hr><br>
+    <h2>benifits of object-oriented programming (OOP)</h2><br>
+    <h3>1. code reusabilit (inheritance)</h3>
+    <ul>
+      <li>OOP allows reuse of existing code through inheritance, reducing redundancy.</li>
+      <li>Example: A Car class can inherit properties from a Vehicle class instead of redefining them.</li>
+    </ul><br>
+    <h3>2. encaptulation (data hiding)</h3>
+    <ul>
+      <li>Protects data by restricting access to certain parts of an object.</li>
+      <li>Example: Private variables in a BankAccount class prevent unauthorized access.</li>
+    </ul><br>
+    <h3>3. Modularity (code orginazation)</h3><br>
+    <ul>
+      <li>OOP structures code into independent objects, making it more organized and modular.</li>
+      <li>This helps in team collaboration since different teams can work on separate objects.</li>
+    </ul><br>
+    <h3>4. Scalability and Maintainability</h3><br>
+    <ul>
+      <li>Large applications become easier to manage due to a well-structured object hierarchy.</li>
+      <li>Example: Updating a single class affects all objects derived from it.</li>
+    </ul><br>
+    <h3>5. Flexibility (Polymorphism)</h3><br>
+    <ul>
+      <li>OOP allows functions to have different behaviors based on the object that calls them.</li>
+      <li>Example: A draw() function can work for both Circle and Rectangle classes without rewriting code.</li>
+    </ul><br>
+    <h3>6. Abstraction (Simplified Complexity)</h3><br>
+    <ul>
+      <li>Hides complex implementation details from the user, showing only the necessary parts.</li>
+      <li>Example: A Car class provides a startEngine() method without exposing internal mechanisms.</li>
+    </ul><br>
+
+    <table class="table table-hover">
+      <tr class="bg-dark text-white">
+        <th>Features</th>
+        <th>C</th>
+        <th>C++</th>
+      </tr>
+
+      <tr>
+        <th>Prardigm</th>
+        <td>Procedural Programming Language.</td>
+        <td>Supports both procedural and object-oriented programming (OOP).</td>
+      </tr>
+
+      <tr>
+        <th>Encaptulation & Classes</th>
+        <td>Does not support classes and objects.</td>
+        <td>Supports classes and objects, enabling encapsulation and abstraction.</td>
+      </tr>
+
+      <tr>
+        <th>Function Overloading & Operator Overloading</th>
+        <td>Does not support function or operator overloading.</td>
+        <td>Supports function and operator overloading.</td>
+      </tr>
+
+      <tr>
+        <th>Memory Management</th>
+        <td>Uses malloc() and free() for dynamic memory allocation.</td>
+        <td>Uses new and delete for dynamic memory allocation.</td>
+      </tr>
+
+      <tr>
+        <th>Standard Input/Output</th>
+        <td>Uses printf() and scanf().</td>
+        <td>Uses cout and cin (supports streams).</td>
+      </tr>
+
+      <tr>
+        <th>Exception Handling</th>
+        <td>No built-in exception handling.</td>
+        <td>Supports exception handling using try, catch, and throw</td>
+      </tr>
+
+      <tr>
+        <th>Namespace</th>
+        <td>No namespace support.</td>
+        <td>Supports namespaces to avoid name conflicts.</td>
+      </tr>
+
+      <tr>
+        <th>Inheritance & Polymorphism</th>
+        <td>Does not support inheritance and polymorphism</td>
+        <td>Supports inheritance and polymorphism as part of OOP.</td>
+      </tr>
+
+      <tr>
+        <th>Standard Libraries</th>
+        <td>Has a small standard library mainly focused on functions like math.h, stdio.h, etc.</td>
+        <td>Has a richer standard library, including the Standard Template Library (STL)</td>
+      </tr>
+
+      <tr>
+        <th>File Extensions</th>
+        <td>Uses .c extension.</td>
+        <td>Uses .cpp extension.</td>
+      </tr>
+    </table><br>
+    <h2> Tokens and identifiers:</h2><br>
+    <h3>Tokens:</h3>
+    <ul>
+      <li><strong>Keywords: </strong> Reserved words like int, return, class, if, while, etc.</li>
+      <li><strong>Identifiers: </strong> Names for variables, functions, arrays, etc. (e.g., myVar, sum, calculate()).</li>
+      <li><strong>Literals: </strong> Constant values like 10, 3.14, 'A', "Hello".</li>
+      <li><strong>Operators: </strong> Symbols that perform operations, like +, -, *, /, ++, ==.</li>
+      <li><strong>Punctuators (Separators)</strong>Symbols like {}, ;, ,, (), [].</li>
+      <li><strong>Comments: </strong> Non-executable text written with // (single-line) or /*...*/ (multi-line).</li>
+    </ul><br>
+    <h3>Identifiers:</h3>
+    <ul>
+      <li>Identifiers are user-defined names used for variables, functions, arrays, and other elements.</li>
+      <br>
+      <div class="correctSyntax">
+        <li style="list-style: none;"><strong>Rules for Naming Identifiers:</strong></li> 
+        <li>Can contain letters (A-Z, a-z), digits (0-9), and underscore (_).</li>
+        <li>Must start with a letter or an underscore (not a digit).</li>
+        <li>Cannot be a keyword (int, float, while, etc.).</li>
+        <li>Case-sensitive (sum and Sum are different).</li>
+        <li>No spaces or special characters (@, $, %).</li>
+      </div>
+    </ul>
+    <div class="codeScreen">
+      <div class="codes">
+        <div class="card">
+          <div class="card-body code-console">
+            <div class="card-header bg-dark text-white">Example</div>
+            <pre>
+int age;  // 'age' is an identifier
+float price;  // 'price' is an identifier
+void calculateTotal() { } // 'calculateTotal' is an identifier
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div> <br>
+    <h2>Character Set and Symbols in C++ Programming</h2>
+    <br>
+    <h3>Character Set in C++:</h3>
+    <ul>
+      <li>C++ programs use a set of characters that includes:</li><br>
+
+        <li style="list-style: none;"><strong>1. Letters (Alphabets)</strong></li>
+        <li>Uppercase: A-Z</li>
+        <li>Lowercase: a-z</li><br>
+
+        <li style="list-style: none;"><strong>2. Digits</strong></li>
+        <li>0-9 (Used in numbers and identifiers)</li><br>
+
+        <li style="list-style: none;"><strong>3. Special Characters (Symbols)</strong></li>      
+        <li>+ - * / % = &lt; &gt; & | ^ ~ ! ? : ; , . ( ) { } [ ] " ' \</li><br>
+
+        <li style="list-style: none;"><strong>4. Whitespace Characters</strong></li>
+        <li>Space ( ), Tab (\t), Newline (\n), Carriage Return (\r), Form Feed (\f)</li><br>
+
+        <li style="list-style: none;"><strong>5. Escape Sequences (Special characters using \)</strong></li>
+        <li>\n (Newline), \t (Tab), \b (Backspace), \\ (Backslash), \' (Single quote), \" (Double quote)</li>
+    </ul><br>
+    <h3>Symbols in C++</h3>
+    <ul>
+      <li>Symbols in C++ are special characters used for various purposes, such as arithmetic, logical operations, and program structure.</li>
+      <br>
+      <li style="list-style: none;"><strong>1. Arithmetic Operators</strong></li>
+      <li>+ (Addition), - (Subtraction), * (Multiplication), / (Division), % (Modulus)</li>
+      <br>
+      <li style="list-style: none;"><strong>2. Relational Operators</strong></li>
+      <li>== (Equal to), != (Not equal to), > (Greater than), &lt; (Less than), >= (Greater than or equal to), <= (Less than or equal to)</li>
+      <br>
+      <li style="list-style: none;"><strong>3. Logical Operators</strong></li>
+      <li>&& (Logical AND), || (Logical OR), ! (Logical NOT)</li>
+      <br>
+      <li style="list-style: none;"><strong>4. Bitwise Operators</strong></li>
+      <li>& (AND), | (OR), ^ (XOR), ~ (NOT), &lt;&lt; (Left shift), >> (Right shift)</li>
+      <br>
+      <li style="list-style: none;"><strong>5. Assignment Operators</strong></li>
+      <li>= (Assignment), +=, -=, *=, /=, %=, &=, |=, ^=, &lt;&lt;=, >>=</li>
+      <br>
+      <li style="list-style: none;"><strong>6. Increment & Decrement Operators</strong></li>
+      <li>++ (Increment), -- (Decrement)</li>
+      <br>
+      <li style="list-style: none;"><strong>7. Punctuation & Separators</strong></li>
+      <li>{} (Braces for blocks), () (Parentheses for functions), [] (Brackets for arrays), ; (Statement terminator), , (Separator)</li>
+      <br>
+      <li style="list-style: none;"><strong>8. Other Symbols</strong></li>
+      <li>? : (Ternary operator), -> (Pointer operator), :: (Scope resolution operator), sizeof (Size of data type)</li>
+    </ul>
+    <br>
+    <h3>Keywords:</h3>
+    <ul>
+      <li>Keywords are reserved words in c++ that have special meaning to the compiler.</li>
+      <li>These words cannot be used as identifiers (like variable names or function names).</li>
+      <li><strong>Examples of keywords</strong></li>
+    </ul>
+    <div class="codeScreen">
+      <div class="codes">
+        <div class="card">
+          <div class="card-body code-console">
+            <div class="card-header bg-dark text-white">Each keywords serves a specific purpose in the language.</div>
+            <pre>
+int, float, double, char, void, if, else, switch, case, for, while, do,
+break, continue, return, class, public, private, protected, virtual, static,
+const, new, delete, this, namespace, using, try, catch, throw, template,
+friend, inline, sizeof, typeid, dynamic_cast, static_cast, reinterpret_cast,
+const_cast, volatile, mutable, explicit, override, final
+            </pre>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h3>Variables in C++</h3>
+      <ul>
+        <li>A variable is a name given to a memory location that is used to store data.</li>
+        <li>The value of a variable can be changed during the execution of the program.</li>
+        <br>
+        <li style="list-style: none;"><strong>Syntax:</strong></li>
+        <li style="list-style: none;"><b>int</b> age = 20;</li>
+        <li style="list-style: none;">Here, <b>age</b> is a variable of type <b>int</b> (integer) and it stores the value <b>20</b>.</li>
+      </ul>
+    </div>
+    <br>
+    <h3>Constants in C++</h3>
+    <ul>
+      <li>A constant is a value that cannot be changed during the execution of the program.</li>
+      <li>In C++, constants are declared using the const keyword.</li>
+      <br>
+      <li style="list-style: none;"><strong>Syntax:</strong></li>
+      <li style="list-style: none;"><b>const</b> data_type constant_name = value;</li>
+      <br>
+      <li style="list-style: none;"><strong>Example</strong></li>
+      <li style="list-style: none;"><b>const float</b> PI = <b>3.14</b>;</li>
+      <li style="list-style: none;">Here, <b>PI</b> is a <b>constant</b> of type <b>float</b>, and its value is fixed as <b>3.14</b>.</li>
+    </ul>
+    <br>
+    <h3>Dynamic Initialization of Variables</h3>
+    <ul>
+      <li>It means initializing variables at runtime using expressions or values.</li>
+      <li>Initialization happens using the result of a calculation or function.</li>
+      <li>Useful when the initial value is not known at compile time.</li>
+      <br>
+      <li style="list-style: none;"><strong>Examples:</strong></li>
+      <li style="list-style: none;"><b>int</b> a = 5, b = 10;</li>
+      <li style="list-style: none;"><b>int</b> sum = a + b; // dynamically initialized</li>
+    </ul>
+    <br>
+    <h3>Reference Variables</h3>
+    <ul>
+      <li>A reference is an alias (another name) for an existing variable.</li>
+      <li>Declared using the <b>&</b> symbol.</li>
+      <li>Any changes made using the reference also affect the original variable.</li>
+      <br>
+      <li style="list-style: none;"><strong>Example:</strong></li>
+      <li style="list-style: none;"><b>int</b> x = <b>10</b>;</li>
+      <li style="list-style: none;"><b>int</b> &ref = x; // ref is a reference to x</li>
+      <li style="list-style: none;">ref = <b>20</b>; // x is now 20</li>
+    </ul>
+    <br>
+    <h3> Basic Data Types in C++</h3>
+    <ul>
+      <li>These are the fundamental types used to declare variables.</li>
+      <li>Common basic data types:</li>
+      <li><b>int</b> - for integers (e.g., 5, -3)</li>
+      <li><b>float</b> - for decimal numbers (e.g., 3.14)</li>
+      <li><b>double</b> - for larger decimal numbers</li>
+      <li><b>char</b> - for characters (e.g., 'A')</li>
+      <li><b>bool</b> - for Boolean values (true or false)</li>
+      <br>
+      <li style="list-style: none;"><strong>Example:</strong></li>
+      <li style="list-style: none;"><b>int</b> age = <b>18</b>;</li>
+      <li style="list-style: none;"><b>float</b> pi = <b>3.14</b>;</li>
+      <li style="list-style: none;"><b>char</b> grade = <b>'A'</b>;</li>
+      <li style="list-style: none;"><b>bool</b> isPass = <b>true</b>;</li>
+    </ul>
+
+    <div class="buttonBox">
+      <a href="unit2.html"><button>Next</button></a>
+    </div>
+  </div>
+</main>
+</body>
+</html>

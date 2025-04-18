@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="image/OIP (1).jpg">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ Lab</title>
+  <style>
+    .code-console {
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 5px;
+      font-family: 'Courier New', Courier, monospace;
+      height: 400px; /* Fixed height */
+      overflow-y: auto; /* Vertical scrollbar */
+    }
+    .code-console pre {
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      border: none;
+      margin: 0; /* Remove default margin */
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+      <a class="navbar-brand" href="index.html"><img src="image/logo.png" alt="logo" class="img-fluid" width="150px" height="50px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container mt-4">
+    <!-- lab_01 -->
+    <div class="documentBody">
+      <div class="codeScreen">
+        <div class="codes">
+          <div class="card">
+            <div class="card-body code-console">
+              <div class="card-header bg-dark text-white">Lab 01</div>
+              <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    float percentage;
+    cout &lt;&lt; "Enter the percentage of the student: ";
+    cin &gt;&gt; percentage;
+
+    if(percentage &gt;= 90)
+    {
+      cout &lt;&lt; "Grade A+";
+    }
+
+    else if((percentage &lt; 90) && (percentage &gt;= 70))
+    {
+      cout &lt;&lt; "Grade A";
+    }
+
+    else if((percentage &lt; 70) && (percentage &gt;= 60))
+    {
+      cout &lt;&lt; "Grade B";
+    }
+
+    else if((percentage &lt; 60) && (percentage &gt;= 40))
+    {
+      cout &lt;&lt; "Grade C";
+    }
+
+    else if((percentage &lt; 40) && (percentage &gt;= 30))
+    {
+      cout &lt;&lt; "Grade D";
+    }
+
+    else
+    {
+      cout &lt;&lt; "Failed";
+    }
+}
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <!-- lab_02 -->
+    <div class="documentBody mt-4">
+      <div class="codeScreen">
+        <div class="codes">
+          <div class="card">
+            <div class="card-body code-console">
+              <div class="card-header bg-dark text-white">Lab 02</div>
+              <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+class counter
+{
+  private:
+    static int count;
+
+  public:
+    counter()
+    {
+      count++;
+    }
+
+    static int getCount()
+    {
+      return count;
+    }
+};
+
+int counter :: count = 0;
+
+int main()
+{
+  counter obj1, obj2, obj3;
+  cout &lt;&lt; "No. of object, We created "&lt;&lt; counter :: getCount() &lt;&lt; endl;
+}
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- lab_04 -->
+    <div class="documentBody mt-4">
+      <div class="codeScreen">
+        <div class="codes">
+          <div class="card">
+            <div class="card-body code-console">
+              <div class="card-header bg-dark text-white">Lab 04</div>
+              <pre>
+#include &lt;iostream&gt;
+using namespace std;
+
+class student
+{
+  private:
+    string name;
+    int rollNo;
+    char grade;
+
+  public:
+    void readDetails()
+    {
+      cout &lt;&lt; "Enter Name: ";
+      cin &gt;&gt; name;
+      cout &lt;&lt; endl;
+
+      cout &lt;&lt; "Enter Roll No: ";
+      cin &gt;&gt; rollNo;
+      cout &lt;&lt; endl;
+
+      cout &lt;&lt; "Enter Grade: ";
+      cin &gt;&gt; grade;
+      cout &lt;&lt; endl;
+    }
+
+    void displayResult()
+    {
+      cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; " Roll No: " &lt;&lt; rollNo &lt;&lt; " Grade: " &lt;&lt; grade &lt;&lt; endl;
+    }
+};
+
+int main()
+{
+  const int numberOfTheStudent = 3;
+  student stu1[numberOfTheStudent];
+
+  cout &lt;&lt; "Enter the details of " &lt;&lt; numberOfTheStudent &lt;&lt; " students: " &lt;&lt; endl;
+
+  for(int i = 0; i &lt; numberOfTheStudent; i++)
+  {
+    cout &lt;&lt; "student" &lt;&lt; i + 1 &lt;&lt; ";" &lt;&lt; endl;
+    stu1[i].readDetails();
+  }
+}
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

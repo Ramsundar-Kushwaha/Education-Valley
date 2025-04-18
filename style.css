@@ -1,0 +1,214 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f0f2f5, #c9d6ff);
+    color: #333;
+    line-height: 30px;
+}
+/* header {
+    background: linear-gradient(90deg, #4b6cb7, #182848);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.5s ease-in-out;
+} */
+.logo img {
+    height: 50px;
+    max-width: 100%;
+}
+.documentBody {
+    max-width: 80%;
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.syntaxholder {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.syntax {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 200px;
+    text-align: left; /* Align text to the left */
+}
+.syntax pre{
+    background-color: #f8f9fa;
+    /* background: #1e1e1e; */
+    color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 16px;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+h1, h2, h3 {
+    color: #2c3e50;
+}
+h1{
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    border: 1px dotted #2c3e50;
+    text-transform: uppercase;
+    /* text-decoration: underline; */
+}
+h2{
+    text-transform: capitalize;
+}
+pre {
+    background: #1e1e1e;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 16px;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.code-highlight .keyword { color: #569cd6; }
+.code-highlight .function { color: #dcdcaa; }
+.code-highlight .variable { color: #9cdcfe; }
+.code-highlight .header { color: #c586c0; }
+.code-highlight .return { color: #ff616e; }
+.code-highlight .string { color: #ce9178; }
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .documentBody {
+        padding: 20px;
+    }
+}
+
+.code-console {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    height: 400px; /* Fixed height */
+    overflow-y: auto; /* Vertical scrollbar */
+  }
+  .code-console pre {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    border: none;
+    margin: 0; /* Remove default margin */
+  }
+
+.note{
+    width: 78%;
+    height: auto;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: rgba(53, 204, 254, 0.382);
+    
+    color: black;
+    font-weight: 500;
+}
+
+.error{
+    width: 78%;
+    height: auto;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: rgba(255, 0, 34, 0.342);
+    color: black;
+    font-weight: 500;
+}
+
+.correctSyntax{
+    width: 78%;
+    height: auto;
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(29, 255, 29, 0.414);
+    color: black;
+}
+
+
+.drowBack{
+    width: 78%;
+    height: auto;
+    margin: auto;
+    padding: 15px;
+    background-color: rgba(145, 228, 243, 0.512);
+}
+.example {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 50%;
+    text-align: left; /* Align text to the left */
+}
+.example pre{
+    background-color: #f8f9fa;
+    /* background: #1e1e1e; */
+    color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 16px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.buttonBox{
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    margin: auto;
+}
+
+.buttonBox a{
+    text-decoration:none;
+    margin: auto;
+}
+
+button{
+    width: auto;
+    height: fit-content;
+    padding: 8px 30px;
+    border: none;
+    background-color: rgb(25, 215, 180);
+    color: black;
+    text-transform: capitalize;
+    transition: 50ms ease-in-out;
+}
+
+button:hover{
+    box-shadow: 1px 0px 5px black;
+}

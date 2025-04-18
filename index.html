@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="image/icon.png">
+  <title>Quantum University Notes</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    body {
+      background: linear-gradient(135deg, #f0f2f5, #c9d6ff);
+      font-family: 'Roboto', sans-serif;
+      flex: 1;
+    }
+    h1 {
+      color: #333;
+      cursor: pointer;
+      margin-top: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+    .documentBox {
+      background-color: white;
+      text-align: center;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .hero {
+      background: url('image/hero-bg.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      width: 100%;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      color: #000; /* Changed color to black */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+    }
+    .subjects {
+      margin: 40px 0;
+    }
+    .subjects .card {
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .subjects .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .navbar {
+      width: 100%;
+      animation: slideDown 1s ease-in-out;
+    }
+    .navbar-brand img {
+      max-width: 100%;
+      height: auto;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      width: 100%;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+    }
+    footer a {
+      color: #ffeb3b;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+      <a class="navbar-brand" href="#"><img src="image/logo.png" alt="logo" class="img-fluid" width="150px" height="50px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to Quantum University Notes</h1>
+      <p>Your one-stop destination for all engineering subjects notes</p>
+    </div>
+  </section>
+  <main class="container flex-grow-1">
+    <div class="subjects row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">C++</h5>
+            <p class="card-text">Find all the lectures, labs, notes and projects for C++.</p>
+            <a href="tutorial1.html" class="btn btn-primary">tutorials</a>
+            <a href="lab.html" class="btn btn-secondary">Lab</a>
+            <a href="unit1.html" class="btn btn-warning">notes</a>
+            <a href="#" class="btn btn-success">Projects</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add more cards for other subjects as needed -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Web & Digital Analytic</h5>
+            <p class="card-text">Find all the lectures, labs, notes and projects for Web and Digital Analytic.</p>
+            <a href="tutorial1.html" class="btn btn-primary">tutorials</a>
+            <a href="lab.html" class="btn btn-secondary">Lab</a>
+            <a href="unit1.html" class="btn btn-warning">notes</a>
+            <a href="#" class="btn btn-success">Projects</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Add more cards for other subjects as needed -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Graph Theory and Probability</h5>
+            <p class="card-text">Find all the lectures, labs, notes and projects for Graph Theory and Probability.</p>
+            <a href="tutorial1.html" class="btn btn-primary">tutorials</a>
+            <a href="lab.html" class="btn btn-secondary">Lab</a>
+            <a href="unit1.html" class="btn btn-warning">notes</a>
+            <a href="#" class="btn btn-success">Projects</a>
+          </div>
+        </div>
+      </div>  
+      <!--Add more cards for other subjects as needed-->
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Education Valley. All rights reserved.Developed by Ramsundar.</p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
